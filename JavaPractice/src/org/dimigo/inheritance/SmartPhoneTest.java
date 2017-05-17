@@ -3,6 +3,10 @@
  */
 package org.dimigo.inheritance;
 
+import org.dimigo.abstractclass.Galaxy;
+import org.dimigo.abstractclass.IPhone;
+import org.dimigo.abstractclass.SmartPhone;
+
 /**
  * <pre>
  *  org.dimigo.inheritance
@@ -22,20 +26,18 @@ public class SmartPhoneTest {
 	 */
 	public static void main(String[] args) {
 		
-		SmartPhone g = new Galaxy("갤럭시 S8","삼성",800000);
-		SmartPhone i = new IPhone("iPhone 7","애플",900000);
-		System.out.println(i);
-		i.turnOn();
-		i.pay();
-		SmartPhone.useSpecialFunction(i);
-		i.turnOff();
-		System.out.println();
-		System.out.println(g);
-		g.turnOn();
-		g.pay();
-		SmartPhone.useSpecialFunction(g);
-		g.turnOff();
-		
+		SmartPhone[] s = {
+				new IPhone("iPhone 7","애플",900000),
+				new Galaxy("갤럭시 S8","삼성",800000)
+		};
+		for(SmartPhone phone : s){
+			System.out.println(phone);
+			phone.turnOn();
+			phone.pay();
+			phone.useSpecialFunction(phone);
+			phone.turnOff();
+			System.out.println();
+		}
 	}
 
 }
