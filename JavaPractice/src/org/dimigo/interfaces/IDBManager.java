@@ -27,7 +27,7 @@ public interface IDBManager {
 	public static IDBManager getDBObject(String database){
 		if(database != null){
 		if(database.equals("ORACLE")) return new OracleDB();
-		else if(database.equals("SYBASE")) return new SyBaseDB();
+		else if(database.equals("SYBASE")) return new SybaseDB();
 		}
 		return null;
 	}
